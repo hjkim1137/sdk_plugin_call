@@ -22,7 +22,7 @@ packages:
     description:
       path: "packages/caresens_plugin"
       ref: main
-      resolved-ref: "836abb1ecf5e64fc389519be5b422a2f2a1143c4"
+      resolved-ref: f914ee90d34cd8634b47eab812227c50df2ea658
       url: "https://github.com/diaconn/caresens_air.git"
     source: git
     version: "0.1.0"
