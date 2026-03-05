@@ -49,7 +49,8 @@ class _HistoryScreenState extends State<HistoryScreen> {
                       return Card(
                         child: ListTile(
                           leading: CircleAvatar(
-                            backgroundColor: _glucoseColor(r.value).withValues(alpha: 0.2),
+                            backgroundColor:
+                                _glucoseColor(r.value).withValues(alpha: 0.2),
                             child: Text(
                               r.value.toStringAsFixed(0),
                               style: TextStyle(
@@ -60,11 +61,11 @@ class _HistoryScreenState extends State<HistoryScreen> {
                             ),
                           ),
                           title: Text(
-                            '${r.value.toStringAsFixed(r.unit == "mg/dL" ? 0 : 1)} ${r.unit}',
+                            '${r.value.toStringAsFixed(r.unit == "mg/dL" ? 0 : 1)} ${r.unit}  ${_trendArrow(r.trend)}',
                             style: theme.textTheme.titleMedium,
                           ),
                           subtitle: Text(
-                            '${_formatDate(r.timestamp)}  •  ${_mealTagLabel(r.mealTag)}',
+                            '${_formatDate(r.timestamp)}  •  ${_mealTagLabel(r.mealTag)}  •  ${_trendLabel(r.trend)}',
                           ),
                         ),
                       );
@@ -92,6 +93,28 @@ class _HistoryScreenState extends State<HistoryScreen> {
       'after_meal' => '식후',
       'bedtime' => '취침 전',
       _ => '임의',
+    };
+  }
+
+  String _trendArrow(GlucoseTrend trend) {
+    return switch (trend) {
+      GlucoseTrend.rapidlyRising => '↑↑',
+      GlucoseTrend.rising => '↑',
+      GlucoseTrend.stable => '→',
+      GlucoseTrend.falling => '↓',
+      GlucoseTrend.rapidlyFalling => '↓↓',
+      GlucoseTrend.unknown => '?',
+    };
+  }
+
+  String _trendLabel(GlucoseTrend trend) {
+    return switch (trend) {
+      GlucoseTrend.rapidlyRising => '급상승',
+      GlucoseTrend.rising => '상승',
+      GlucoseTrend.stable => '안정',
+      GlucoseTrend.falling => '하강',
+      GlucoseTrend.rapidlyFalling => '급하강',
+      GlucoseTrend.unknown => '-',
     };
   }
 }
