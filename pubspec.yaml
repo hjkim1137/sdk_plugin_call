@@ -11,7 +11,10 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
   caresens_plugin:
-    path: ../caresens_air/packages/caresens_plugin
+    git:
+      url: https://github.com/diaconn/caresens_air.git
+      ref: main
+      path: packages/caresens_plugin
 
 dev_dependencies:
   flutter_test:

@@ -20,9 +20,11 @@ packages:
   caresens_plugin:
     dependency: "direct main"
     description:
-      path: "../caresens_air/packages/caresens_plugin"
-      relative: true
-    source: path
+      path: "packages/caresens_plugin"
+      ref: main
+      resolved-ref: "836abb1ecf5e64fc389519be5b422a2f2a1143c4"
+      url: "https://github.com/diaconn/caresens_air.git"
+    source: git
     version: "0.1.0"
   characters:
     dependency: transitive
