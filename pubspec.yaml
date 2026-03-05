@@ -1,0 +1,22 @@
+name: caresens_app
+description: CareSens Air - Blood glucose meter companion app.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  caresens_plugin:
+    path: ../caresens_air/packages/caresens_plugin
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
